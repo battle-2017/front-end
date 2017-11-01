@@ -5,18 +5,22 @@ import { NgModule, LOCALE_ID } from '@angular/core';
 // import { ApiService } from './shared/services/api.service';
 
 // Routes
-// import { routing, routedComponents } from './routes/routes';
+import { routing, routedComponents } from './routes/routes';
 
 // Components
 import { AppComponent } from './app.component';
+import { LoginComponent } from './routes/login/login.component';
+import { PageNotFoundComponent } from './routes/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    // routing,
+    routing,
   ],
   providers: [
     // ApiService,
