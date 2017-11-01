@@ -1,0 +1,32 @@
+app-dashboard {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+app-nav-dashboard {
+    background: $grey-light;
+}
+
+
+
+#nav-dashboard {
+    font-family: $font-secondary;
+    padding-top: 5em;
+
+    a {
+        display: block;
+        min-width: 12em;
+        padding: 1em 1em;
+        margin-bottom: 0.3em;
+        font-size: 1.1em;
+        text-decoration: none;
+        color: $grey-dark;
+        background: $grey;
+
+        &.active {
+            background: $accent;
+            color: white;
+        }
+    }
+}
