@@ -5,14 +5,14 @@
 </div>
 
 <div *ngIf="chat" class="chat-container">
-    <div class="conversation">
+    <div #autoscroll class="conversation">
         <app-speech-bubble *ngFor="let speechbubble of conversation" [data]="speechbubble"></app-speech-bubble>
     </div>
     <!-- <div class="quick-options">
-        <button>Actie</button>
+        <button (click)="sendMessage('e')">Actie</button>
     </div> -->
-    <form>
-        <input type="text" placeholder="Uw bericht">
+    <form (ngSubmit)="sendMessage(message.value)">
+        <input #message type="text" name="message" placeholder="Uw bericht" required>
         <input type="submit" value="›">
     </form>
 </div>

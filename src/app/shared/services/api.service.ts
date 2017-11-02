@@ -3,14 +3,10 @@ import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-import { WebsocketService } from './websocket.service';
-
-const CHAT_URL = 'ws://145.100.211.103:8080/';
-
 @Injectable()
 export class ApiService {
 
-  constructor(wsService: WebsocketService) { }
+  constructor() { }
 
   public get conversations(): Observable<any> {
    
