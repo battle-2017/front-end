@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+
+import { ApiService } from 'app/shared/services/api.service';
 
 @Component({
   selector: 'app-chat-route',
@@ -7,33 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatRouteComponent implements OnInit {
 
-  conversations: Array<Object> = [
-    {
-      id: 0,
-      name: 'Hendrik van Gieten',
-      image: 'https://s3.amazonaws.com/uifaces/faces/twitter/rem/128.jpg',
-      active: true,
-      unread: true,
-    },
-    {
-      id: 1,
-      name: 'Mirjam de Vries',
-      image: 'https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg',
-      active: false,
-      unread: true,
+  conversations: Array<Object>;
+  chatId: number;
 
-    }
-  ];
-
-  selectedConversation: number;
-
-  constructor() { }
+  constructor(private apiService: ApiService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-  }
+    this.activatedRoute.params.subscribe(params => {
+      this.chatId = + params['id'];
+    });
 
-  onConversationChange($event) {
-    this.selectedConversation = $event;
+    this.apiService.conversations.subscribe(conversations => {
+      this.conversations = conversations;
+    });
   }
 
 }

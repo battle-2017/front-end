@@ -37,6 +37,11 @@ const appRoutes: Routes = [
         canActivate: [AuthGuard]
       },
       {
+        path: 'chat/:id',
+        component: ChatRouteComponent,
+        canActivate: [AuthGuard]
+      },
+      {
         path: 'stats',
         component: StatsRouteComponent,
         canActivate: [AuthGuard]

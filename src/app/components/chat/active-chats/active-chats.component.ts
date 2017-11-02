@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-active-chats',
@@ -8,16 +9,18 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class ActiveChatsComponent implements OnInit {
 
   @Input() conversations: Object;
-  @Input() selectedConversation: number;
-  @Output() conversationChange: EventEmitter<number> = new EventEmitter<number>();
+  selectedConversation: number;
 
-  constructor() { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.activatedRoute.params.subscribe(params => {
+      this.selectedConversation = + params['id'];
+    });
   }
 
   selectConversation(id) {
-    this.conversationChange.emit(id);
+    this.router.navigate(['/dashboard/chat/'+id]);
   }
 
 }
