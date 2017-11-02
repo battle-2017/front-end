@@ -1,3 +1,39 @@
-app-timeline {
+.timeline {
+    position: relative;
     width: 100%;
+    padding: 0.8em;
+
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: 5;
+        display: inline-block;
+        top: 0;
+        left: 1.6em;
+        width: 0.2em;
+        height: 100%;
+        background: $grey;
+
+    }
+    
+    .timeline-item {
+        background: $grey-light;
+        color: $grey-dark;
+        margin-left: 2.4em;
+        &::before {
+            content: '';
+            box-sizing: content-box;
+            display: inline-block;
+            position: absolute;
+            z-index: 10;
+            right: calc(100% + 1em);
+            top: 50%;
+            transform: translateY(-50%);
+            background: $accent;
+            width: 0.5em;
+            height: 0.5em;
+            border-radius: 50%;
+            border: 0.3em solid rgba($accent, 0.5);
+        }
+    }
 }

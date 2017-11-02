@@ -1,3 +1,14 @@
-<h2 class="column-heading">Tijdlijn</h2>
+<div *ngIf="conversation">
 
-{{ conversation | json }}
+    <h2 class="column-heading">Actie tijdlijn</h2>
+
+    <div class="timeline">
+        <!-- {{ conversation | json }} -->
+        <div [ngClass]="{'bubble': true, 'timeline-item': true, 'recieved': true }">
+            <p>Gezocht naar 'film'</p>
+            <!-- <div class="date">{{ data.timestamp * 1000 | date:"HH:mm" }}</div> -->
+            <div class="date">10:00</div>
+        </div>
+    </div>
+
+</div>

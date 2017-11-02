@@ -1,14 +1,16 @@
-<div class="chat-header">
+<div *ngIf="chat" class="chat-header">
     <div class="profile-picture" [ngStyle]="{'background-image': 'url(' + chat.image + ')'}"></div>
     <h2 class="column-heading">{{ chat.name }}</h2>
-    <div class="chat-options">☰</div>
+    <a routerLink="/dashboard/chat" class="chat-options">✕</a>
 </div>
 
-<div class="chat-container">
+<div *ngIf="chat" class="chat-container">
     <div class="conversation">
-        <!-- {{ conversation | json }} -->
         <app-speech-bubble *ngFor="let speechbubble of conversation" [data]="speechbubble"></app-speech-bubble>
     </div>
+    <!-- <div class="quick-options">
+        <button>Actie</button>
+    </div> -->
     <form>
         <input type="text" placeholder="Uw bericht">
         <input type="submit" value="›">

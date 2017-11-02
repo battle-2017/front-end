@@ -3,10 +3,14 @@ import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
+import { WebsocketService } from './websocket.service';
+
+const CHAT_URL = 'ws://145.100.211.103:8080/';
+
 @Injectable()
 export class ApiService {
 
-  constructor() { }
+  constructor(wsService: WebsocketService) { }
 
   public get conversations(): Observable<any> {
    
@@ -34,22 +38,22 @@ export class ApiService {
     return Observable.of([
       {
         text: 'Ik ben op zoek naar een film.',
-        recieved: false,
+        recieved: true,
         timestamp: 1500000000
       },
       {
         text: 'Welke soort films vind je leuk?',
-        recieved: true,
+        recieved: false,
         timestamp: 1500000002
       },
       {
         text: 'Actiefilms.',
-        recieved: false,
+        recieved: true,
         timestamp: 1500000006
       },
       {
         text: 'Oke, ik ga voor je op zoek.',
-        recieved: true,
+        recieved: false,
         timestamp: 1500000010
       }
     ])

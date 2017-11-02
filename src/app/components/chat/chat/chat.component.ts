@@ -20,10 +20,9 @@ export class ChatComponent implements OnInit {
   ) { }
   
   ngOnInit() {
-    console.log(this.chat);
-      this.apiService.getConversation().subscribe(conversation => {
-        this.conversation = conversation;
-      });
+    this.apiService.getConversation().subscribe(conversation => {
+      this.conversation = conversation;
+    });
   }
 
 

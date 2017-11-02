@@ -1,19 +1,25 @@
+@import 'bubble';
 @import 'active-chats';
 @import 'timeline';
-@import 'speech-bubble';
 
 app-chat-route {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
+    height: 100%;
 }
 
-app-active-chats,
-app-chat,
-app-timeline {
+app-chat {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.column {
     position: relative;
     width: 33.33%;
+    height: 100%;
 }
 
 .profile-picture {
@@ -62,22 +68,26 @@ app-timeline {
         cursor: pointer;
         font-size: 1.5em;
         font-weight: bold;
+        text-decoration: none;
         color: $accent;
     }
 }
 
 .chat-container {
+    height: 100%;
     display: flex;
     flex-direction: column;
 
     .conversation {
         background: $icewhite;
         padding: 0.8em;
+        height: 100%;
     }
 
     form {
         display: flex;
         border-top: 0.2em solid $grey;
+        padding-bottom: 0.4em;
     }
 
     input[type="text"] {

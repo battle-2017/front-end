@@ -1,5 +1,4 @@
-<app-active-chats [conversations]="conversations"></app-active-chats>
+<app-active-chats class="column" [conversations]="conversations"></app-active-chats>
 
-<app-chat [chat]="conversations[chatId]"></app-chat>
-
-<app-timeline [conversation]="conversations[chatId]"></app-timeline>
+<app-chat class="column" [chat]="conversations[chatId]"></app-chat>
+<app-timeline class="column" [conversation]="conversations[chatId]"></app-timeline>
