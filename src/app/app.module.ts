@@ -11,23 +11,29 @@ import { routing, routedComponents } from './routes/routes';
 // Components
 import { AppComponent } from './app.component';
 import { LoginComponent } from './routes/login/login.component';
+import { ChatComponent } from './components/chat/chat/chat.component';
 import { PageNotFoundComponent } from './routes/page-not-found/page-not-found.component';
 import { DashboardComponent } from './routes/dashboard/dashboard.component';
-import { ChatComponent } from './routes/chat/chat.component';
-import { AdminComponent } from './routes/admin/admin.component';
-import { StatsComponent } from './routes/stats/stats.component';
 import { NavDashboardComponent } from './components/nav-dashboard/nav-dashboard.component';
+import { ActiveChatsComponent } from './components/chat/active-chats/active-chats.component';
+import { ChatRouteComponent } from './routes/chat-route/chat-route.component';
+import { AdminRouteComponent } from './routes/admin-route/admin-route.component';
+import { StatsRouteComponent } from './routes/stats-route/stats-route.component';
+import { TimelineComponent } from './components/chat/timeline/timeline.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    ChatComponent,
     PageNotFoundComponent,
     DashboardComponent,
-    ChatComponent,
-    AdminComponent,
-    StatsComponent,
-    NavDashboardComponent
+    NavDashboardComponent,
+    ActiveChatsComponent,
+    ChatRouteComponent,
+    AdminRouteComponent,
+    StatsRouteComponent,
+    TimelineComponent
   ],
   imports: [
     BrowserModule,

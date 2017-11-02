@@ -6,23 +6,21 @@ import { AuthGuard } from 'app/shared/services/auth-guard.service';
 // Routed components
 import { LoginComponent }         from 'app/routes/login/login.component';
 import { DashboardComponent }     from 'app/routes/dashboard/dashboard.component';
-import { ChatComponent }          from 'app/routes/chat/chat.component';
-import { StatsComponent }         from 'app/routes/stats/stats.component';
-import { AdminComponent }         from 'app/routes/admin/admin.component';
+import { ChatRouteComponent }     from 'app/routes/chat-route/chat-route.component';
+import { StatsRouteComponent }    from 'app/routes/stats-route/stats-route.component';
+import { AdminRouteComponent }    from 'app/routes/admin-route/admin-route.component';
 import { PageNotFoundComponent }  from 'app/routes/page-not-found/page-not-found.component';
 // import { LogoutComponent } from 'app/routes/logout/logout.component';
-
-import { AppComponent } from 'app/app.component';
 
 const appRoutes: Routes = [
   { 
     path: 'login',
     component: LoginComponent
   },
-  { 
-    path: 'logout',
-    component: AppComponent
-  },
+  // { 
+  //   path: 'logout',
+  //   component: AppComponent
+  // },
   {
     path: 'dashboard',
     component: DashboardComponent,
@@ -30,17 +28,17 @@ const appRoutes: Routes = [
     children: [
       {
         path: 'admin',
-        component: AdminComponent,
+        component: AdminRouteComponent,
         canActivate: [AuthGuard]
       },
       {
         path: 'chat',
-        component: ChatComponent,
+        component: ChatRouteComponent,
         canActivate: [AuthGuard]
       },
       {
         path: 'stats',
-        component: StatsComponent,
+        component: StatsRouteComponent,
         canActivate: [AuthGuard]
       },
     ]
