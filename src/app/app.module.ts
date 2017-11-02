@@ -22,6 +22,7 @@ import { AdminRouteComponent } from './routes/admin-route/admin-route.component'
 import { StatsRouteComponent } from './routes/stats-route/stats-route.component';
 import { TimelineComponent } from './components/chat/timeline/timeline.component';
 import { SpeechBubbleComponent } from './components/chat/speech-bubble/speech-bubble.component';
+import { KpiComponent } from './components/stats/kpi/kpi.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { SpeechBubbleComponent } from './components/chat/speech-bubble/speech-bu
     AdminRouteComponent,
     StatsRouteComponent,
     TimelineComponent,
-    SpeechBubbleComponent
+    SpeechBubbleComponent,
+    KpiComponent
   ],
   imports: [
     BrowserModule,
