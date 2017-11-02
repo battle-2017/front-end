@@ -10,6 +10,17 @@ html, body {
     text-align: center;
     padding: 1em;
     margin: 0;
+    display: flex;
+    justify-content: space-between;
+    
+    .profile-picture {
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 2em;
+        width: 2em;
+        height: 2em;
+        margin-right: 0.5em;
+    }
 }
 
 h1,h2,h3,h3,h4,h5,h6 {

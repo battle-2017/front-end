@@ -1,5 +1,4 @@
 app-active-chats {
-    width: 100%;
 
     .chat-listing {
         padding: 1em;
@@ -16,40 +15,19 @@ app-active-chats {
         transition: $transition;
         border-right: 0 solid transparent;
         
+        &.active {
+            border-right: $border-radius solid $accent;
+        }
+        
         &:hover {
             border-right: $border-radius+0.2em solid $accent !important;
         }
         
         &.unread {
-            border-right: $border-radius solid $accent;
-
             .profile-picture {
                 &::after {
                     opacity: 1;
                 }
-            }
-        }
-
-        .profile-picture {
-            position: relative;
-            width: 4em;
-            height: 4em;
-            margin-right: 2em;
-            border-radius: 50%;
-            background-size: cover;
-            background-position: center;
-            
-            &::after {
-                content: '';
-                display: block;
-                position: absolute;
-                opacity: 0;
-                top: 0;
-                right: 0;
-                width: 1em;
-                height: 1em;
-                background: $accent;
-                border-radius: 50%;
             }
         }
     }

@@ -1,5 +1,11 @@
-<app-active-chats></app-active-chats>
+<app-active-chats 
+    [conversations]="conversations" 
+    [selectedConversation]="selectedConversation" 
+    (conversationChange)="onConversationChange($event)"
+></app-active-chats>
 
-<app-chat></app-chat>
+<app-chat
+    [conversation]="conversations[selectedConversation]"
+></app-chat>
 
 <app-timeline></app-timeline>

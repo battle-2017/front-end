@@ -1,4 +1,5 @@
 @import 'active-chats';
+@import 'timeline';
 
 app-chat-route {
     display: flex;
@@ -7,3 +8,36 @@ app-chat-route {
     width: 100%;
 }
 
+app-active-chats,
+app-chat,
+app-timeline {
+    width: 33.33%;
+}
+
+.profile-picture {
+    position: relative;
+    width: 4em;
+    height: 4em;
+    margin-right: 2em;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: 0;
+        width: 1em;
+        height: 1em;
+        background: $accent;
+        border-radius: 50%;
+    }
+}
+
+.chat-options {
+    cursor: pointer;
+    color: $accent;
+}

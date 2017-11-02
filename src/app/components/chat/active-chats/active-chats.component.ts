@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-active-chats',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActiveChatsComponent implements OnInit {
 
+  @Input() conversations: Object;
+  @Input() selectedConversation: number;
+  @Output() conversationChange: EventEmitter<number> = new EventEmitter<number>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  selectConversation(id) {
+    this.conversationChange.emit(id);
   }
 
 }
