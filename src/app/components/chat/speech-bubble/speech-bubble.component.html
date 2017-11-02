@@ -1,4 +1,4 @@
-<div [ngClass]="{'bubble': true, 'recieved': data.recieved }">
-  <p>{{ data.text }}</p>
-  <div class="date">Imke - {{ data.timestamp * 1000 | date:"HH:mm" }}</div>
+<div [ngClass]="{'bubble': true, 'recieved': data.sender === 'user' }">
+  <p>{{ data.content }}</p>
+  <div class="date">{{ data.sender }} - {{ data.timestamp * 1000 | date:"HH:mm" }}</div>
 </div>

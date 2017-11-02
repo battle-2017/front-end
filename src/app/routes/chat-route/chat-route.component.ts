@@ -22,11 +22,12 @@ export class ChatRouteComponent implements OnInit {
   ngOnInit() {
 
     this.activatedRoute.params.subscribe(params => {
-      this.chatId = + params['id'];
+      this.chatId = +params['id'];
     });
 
     this.apiService.conversations.subscribe(conversations => {
       this.conversations = conversations;
+      console.log(conversations);
     });
     
   }

@@ -1,9 +1,9 @@
 <h2 class="column-heading">Actieve chats</h2>
 
-<div class="chat-listing" *ngIf="conversations">
+<div class="chat-listing scrollable" *ngIf="conversations">
 
   <div *ngFor="let conversation of conversations; let i = index" 
-      [ngClass]="{'chat-item': true, 'active': i === selectedConversation, 'unread': conversation.unread}"
+      [ngClass]="{'chat-item': true, 'active': i === selectedConversation, 'unread': true}"
       (click)="selectConversation(conversation.id)"
     >
     <div class="profile-picture" [ngStyle]="{'background-image': 'url(' + conversation.image + ')'}"></div>
@@ -12,6 +12,6 @@
 
 </div>
 
-<h2 class="column-heading">Aandacht vereist</h2>
+<!-- <h2 class="column-heading">Aandacht vereist</h2>
 
-<h2 class="column-heading">Alle chats</h2>
+<h2 class="column-heading">Alle chats</h2> -->

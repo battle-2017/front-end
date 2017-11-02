@@ -16,12 +16,6 @@ app-chat {
     height: 100%;
 }
 
-.column {
-    position: relative;
-    width: 33.33%;
-    height: 100%;
-}
-
 .profile-picture {
     position: relative;
     width: 4em;
@@ -62,6 +56,8 @@ app-chat {
     
     .column-heading {
         padding: 0;
+        align-self: center;
+        vertical-align: middle;
     }
 
     .chat-options {
@@ -71,6 +67,12 @@ app-chat {
         text-decoration: none;
         color: $accent;
     }
+}
+
+.chat-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .chat-container {

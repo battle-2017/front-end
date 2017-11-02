@@ -16,10 +16,10 @@ app-nav-dashboard {
 
     a {
         display: block;
-        min-width: 12em;
-        padding: 1em 1em;
+        min-width: 14em;
+        padding: 1.2em 1em;
         margin-bottom: 0.3em;
-        font-size: 1.1em;
+        font-size: 1.2em;
         text-decoration: none;
         color: $grey-dark;
         background: $grey;
@@ -29,4 +29,17 @@ app-nav-dashboard {
             color: white;
         }
     }
+}
+
+.column {
+    position: relative;
+    width: 33.33%;
+    height: 100%;
+}
+
+.scrollable {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }

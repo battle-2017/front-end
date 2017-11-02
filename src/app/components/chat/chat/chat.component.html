@@ -1,4 +1,4 @@
-<div *ngIf="chat" class="chat-header">
+<div class="chat-header">
     <div class="profile-picture" [ngStyle]="{'background-image': 'url(' + chat.image + ')'}"></div>
     <h2 class="column-heading">{{ chat.name }}</h2>
     <a routerLink="/dashboard/chat" class="chat-options">✕</a>
@@ -6,7 +6,7 @@
 
 <div *ngIf="chat" class="chat-container">
     <div #autoscroll class="conversation">
-        <app-speech-bubble *ngFor="let speechbubble of conversation" [data]="speechbubble"></app-speech-bubble>
+        <app-speech-bubble *ngFor="let speechbubble of chat.messages" [data]="speechbubble"></app-speech-bubble>
     </div>
     <!-- <div class="quick-options">
         <button (click)="sendMessage('e')">Actie</button>
