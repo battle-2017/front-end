@@ -10,7 +10,8 @@ import { ApiService } from 'app/shared/services/api.service';
 })
 export class ChatComponent implements OnInit, AfterViewChecked {
   @ViewChild('autoscroll') private conversationContainer: ElementRef;
-
+  @ViewChild('message') private messageInput: ElementRef;
+  
   @Input() chat: Object;
   conversation: Array<Object>;
 
@@ -38,13 +39,16 @@ export class ChatComponent implements OnInit, AfterViewChecked {
   }
 
   sendMessage(message) {
+    
     if(message) {
+      this.messageInput.nativeElement.value = '';
       this.conversation.push({
         text: message,
         recieved: false,
         timestamp: +new Date()
       });
     }
+
   }
 
 }

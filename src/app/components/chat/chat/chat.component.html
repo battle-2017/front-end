@@ -13,6 +13,6 @@
     </div> -->
     <form (ngSubmit)="sendMessage(message.value)">
         <input #message type="text" name="message" placeholder="Uw bericht" required>
-        <input type="submit" value="›">
+        <input #sendButton type="submit" value="›">
     </form>
 </div>
