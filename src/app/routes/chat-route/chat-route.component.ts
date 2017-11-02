@@ -13,9 +13,14 @@ export class ChatRouteComponent implements OnInit {
   conversations: Array<Object>;
   chatId: number;
 
-  constructor(private apiService: ApiService, private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(
+    private apiService: ApiService, 
+    private router: Router, 
+    private activatedRoute: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+
     this.activatedRoute.params.subscribe(params => {
       this.chatId = + params['id'];
     });
@@ -23,6 +28,7 @@ export class ChatRouteComponent implements OnInit {
     this.apiService.conversations.subscribe(conversations => {
       this.conversations = conversations;
     });
+    
   }
 
 }

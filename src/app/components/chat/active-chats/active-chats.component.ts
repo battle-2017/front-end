@@ -11,12 +11,17 @@ export class ActiveChatsComponent implements OnInit {
   @Input() conversations: Object;
   selectedConversation: number;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(
+    private router: Router, 
+    private activatedRoute: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+
     this.activatedRoute.params.subscribe(params => {
-      this.selectedConversation = + params['id'];
+      this.selectedConversation = +params['id'];
     });
+    
   }
 
   selectConversation(id) {

@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
+import { ApiService } from 'app/shared/services/api.service';
+
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
@@ -8,15 +10,20 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ChatComponent implements OnInit {
 
-  @Input() conversation: Object;
+  @Input() chat: Object;
+  conversation: Array<Object>;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(
+    private apiService: ApiService, 
+    private router: Router, 
+    private activatedRoute: ActivatedRoute
+  ) { }
   
   ngOnInit() {
-    // this.activatedRoute.params.subscribe(params => {
-    //   this.conversation = + params['id'];
-    // });
-    // this.router.navigate(['/dashboard/chat/'+id]);
+    console.log(this.chat);
+      this.apiService.getConversation().subscribe(conversation => {
+        this.conversation = conversation;
+      });
   }
 
 

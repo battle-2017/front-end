@@ -11,20 +11,30 @@ html, body {
     text-align: center;
     padding: 1em;
     margin: 0;
-    display: flex;
-    justify-content: space-between;
-    
-    .profile-picture {
-        flex-grow: 0;
-        flex-shrink: 0;
-        flex-basis: 2em;
-        width: 2em;
-        height: 2em;
-        margin-right: 0.5em;
-    }
 }
+
 
 h1,h2,h3,h3,h4,h5,h6 {
     font-family: $font-secondary;
+    color: $grey-dark;
+}
+
+input {
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.btn,
+button,
+input[type="submit"] {
+    border: none;
+    outline: none;
+    background: $accent;
+    color: white;
+}
+
+input[type="text"] {
+    padding: 1em;
+    outline: none;
     color: $grey-dark;
 }

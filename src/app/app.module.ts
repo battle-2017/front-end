@@ -20,6 +20,7 @@ import { ChatRouteComponent } from './routes/chat-route/chat-route.component';
 import { AdminRouteComponent } from './routes/admin-route/admin-route.component';
 import { StatsRouteComponent } from './routes/stats-route/stats-route.component';
 import { TimelineComponent } from './components/chat/timeline/timeline.component';
+import { SpeechBubbleComponent } from './components/chat/speech-bubble/speech-bubble.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { TimelineComponent } from './components/chat/timeline/timeline.component
     ChatRouteComponent,
     AdminRouteComponent,
     StatsRouteComponent,
-    TimelineComponent
+    TimelineComponent,
+    SpeechBubbleComponent
   ],
   imports: [
     BrowserModule,

@@ -1,10 +1,10 @@
 <h2 class="column-heading">Actieve chats</h2>
 
-<div class="chat-listing">
+<div class="chat-listing" *ngIf="conversations">
 
   <div *ngFor="let conversation of conversations; let i = index" 
-    (click)="selectConversation(conversation.id)"
-    [ngClass]="{'chat-item': true, 'active': i === selectedConversation, 'unread': conversation.unread}"
+      [ngClass]="{'chat-item': true, 'active': i === selectedConversation, 'unread': conversation.unread}"
+      (click)="selectConversation(conversation.id)"
     >
     <div class="profile-picture" [ngStyle]="{'background-image': 'url(' + conversation.image + ')'}"></div>
     <h3>{{ conversation.name }}</h3>

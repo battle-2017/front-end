@@ -1,0 +1,4 @@
+<div [ngClass]="{'speech-bubble': true, 'recieved': data.recieved }">
+  <p>{{ data.text }}</p>
+  <div class="date">{{ data.timestamp * 1000 | date:"HH:mm:ss" }}</div>
+</div>
